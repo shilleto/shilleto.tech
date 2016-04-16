@@ -1,0 +1,27 @@
+{
+  "name": "shilleto.tech",
+  "version": "1.0.0",
+  "description": "Luke Shilleto's personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shilleto/shilleto.github.io.git"
+  },
+  "author": "Luke Shilleto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shilleto/shilleto.github.io/issues"
+  },
+  "homepage": "https://github.com/shilleto/shilleto.github.io#readme",
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-in-place": "^1.4.3"
+  },
+  "dependencies": {
+    "metalsmith-html-minifier": "^2.0.0"
+  }
+}
