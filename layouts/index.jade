@@ -1,17 +1,8 @@
----
-pageTitle: "shilleto.tech"
-youAreUsingJade: true
----
-
 doctype html
 html(lang="en")
   head
-    title= pageTitle
-    script(type='text/javascript').
-      if (foo) {
-         bar(1 + 5)
-      }
-  body
+    include ./templates/partials/head
+  body#page-top.index
     h1 Jade - node template engine
     #container.col
       if youAreUsingJade
@@ -23,3 +14,4 @@ html(lang="en")
         templating language with a
         strong focus on performance
         and powerful features.
+
