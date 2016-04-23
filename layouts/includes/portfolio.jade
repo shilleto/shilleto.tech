@@ -1,66 +1,37 @@
-<!-- Portfolio Grid Section -->
-<section id="${toSnakeCase(str: page.portfolio.nav_name)}" class="portfolio-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>${page.portfolio.title}</h2>
-                <hr class="star-primary">
-            </div>
-        </div>
-        <div class="row">
-            <% page.portfolio.projects.each { project -> %>
-            <div class="col-sm-4 portfolio-item">
-                <a href="#${project.modal}" class="portfolio-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <i class="fa fa-search-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="${project.image}" class="img-responsive" alt="">
-                </a>
-            </div>
-            <% } %>
-        </div>
-    </div>
-</section>
-
-<!-- Portfolio Modals -->
-<% page.portfolio.modals.each { modal -> %>
-<div class="portfolio-modal modal fade" id="${modal.id}" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-                <div class="rl">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="modal-body">
-                        <h2>${modal.title}</h2>
-                        <hr class="star-primary">
-                        <img src="${modal.image}" class="img-responsive img-centered" alt="">
-                        <p>${modal.text}</p>
-                        <ul class="list-inline item-details">
-                            <li>Client:
-                                <strong><a href="${modal.link}">${modal.client}</a>
-                                </strong>
-                            </li>
-                            <li>Date:
-                                <strong><a href="${modal.link}">${modal.date}</a>
-                                </strong>
-                            </li>
-                            <li>Service:
-                                <strong><a href="${modal.link}">${modal.service}</a>
-                                </strong>
-                            </li>
-                        </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<% } %>
+section(id=portfolio.nav_name.replace(' ', '-').toLowerCase()).portfolio-section
+    .container
+        .row
+            .col-lg-12.text-center
+                h2= portfolio.title
+                hr.star-primary
+        .row
+            each project in portfolio.projects
+                .col-sm-4.portfolio-item
+                    a(href="#" + project.modal, data-toggle="modal").portfolio-link
+                        .caption
+                            .caption-content: i.fa.fa-search-plus.fa-3x
+                        img(src=project.image, alt="").img-responsive
+each modal in portfolio.modals
+    .portfolio-modal.modal.fade(id=modal.id, tabindex="-1", role="dialog", aria-hidden="true")
+        .modal-content
+            .close-modal(data-dismiss="modal")
+                .lr
+                    .rl
+            .container
+                .row
+                    .col-lg-8.col-lg-offset-2
+                        .modal-body
+                            h2= modal.title
+                            hr.star-primary
+                            img(src=modal.image, alt="").img-responsive
+                            p= modal.text
+                            ul.list-inline.item-details
+                                li Client:
+                                    strong: a(href=modal.link)=modal.client
+                                li Date:
+                                    strong: a(href=modal.link)=modal.date
+                                li Service:
+                                    strong: a(href=modal.link)=modal.service
+                            button(type="button", data-dismiss="modal").btn.btn-default
+                                i.fa.fa-times
+                                = " Close"

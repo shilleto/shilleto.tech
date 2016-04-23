@@ -1,17 +1,66 @@
-doctype html
-html(lang="en")
-  head
-    include ./templates/partials/head
-  body#page-top.index
-    h1 Jade - node template engine
-    #container.col
-      if youAreUsingJade
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
+---
+layout: index.jade
+title: shilleto.tech
+navigation:
+    brand: shilleto.tech
+header:
+    title: Luke Shilleto
+    skills: Full Stack Web Developer - Tech Enthusiast
+    image: profile.png
+sections:
+    - name: Portfolio
+    - name: About
+    - name: Contact
+portfolio:
+    title: Portfolio
+    nav_name: Portfolio
+    projects:
+        -
+            modal: portfolioModal1
+            image: images/portfolio/cabin.png
+        -
+            modal: portfolioModal2
+            image: images/portfolio/cake.png
+    modals:
+    -
+        id: portfolioModal1
+        title: Project Title
+        text: Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+        image: images/portfolio/cabin.png
+        client: Start Bootstrap
+        date: April 2014
+        link: http://startbootstrap.com
+        service: Web Development
+    -
+        id: portfolioModal2
+        title: Project Title
+        text: Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+        image: images/portfolio/cake.png
+        client: Start Bootstrap
+        date: April 2014
+        link: http://startbootstrap.com
+        service: Web Development
 
+about:
+    title: About
+    nav_name: About
+    text1: Hey all. I am a graduate developer
+    text2:
+
+contact:
+    title: Contact Me
+    nav_name: Contact
+
+footer:
+    title1: Location
+    text1: London, England
+    title2: Around the Web
+    facebook: '#'
+    googleplus: '#'
+    twitter: '#'
+    linkedin: '#'
+    dribble: '#'
+    title3: About shilleto.tech
+    text3: This portfolio site was created using jade, less and metalsmith
+    copyright: Copyright &copy; Your Website 2014
+---

@@ -1,17 +1,14 @@
 doctype html
 html(lang="en")
   head
-    include ./templates/partials/head
+    include ./includes/head
   body#page-top.index
-    h1 Jade - node template engine
-    #container.col
-      if youAreUsingJade
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
+    include ./includes/navigation
+    include ./includes/header
+    include ./includes/portfolio
+    include ./includes/about
+    include ./includes/contact
+    include ./includes/footer
+    include ./includes/scroll_top
+    include ./includes/javascripts
 

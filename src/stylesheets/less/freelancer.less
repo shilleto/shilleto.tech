@@ -285,7 +285,7 @@ section.success {
 	    -ms-transition: top 0.3s ease,opacity 0.3s ease;
 	    transition: top 0.3s ease,opacity 0.3s ease;
     }
-    &::not(:first-child) {
+    &:not(:first-child) {
 	    padding-left: 14px;
 	    border-left: 1px solid @gray-lighter;
     }
@@ -418,4 +418,13 @@ footer {
             }            
         }        
     }
+}
+
+#profile-img {
+	max-width: 256px;
+	max-height: 256px;
+	border-radius: 100%;
+	border-color: white;
+	border-width: 10px;
+	border-style: solid;
 }

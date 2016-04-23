@@ -19,9 +19,10 @@
   "devDependencies": {
     "jade": "^1.11.0",
     "metalsmith": "^2.1.0",
-    "metalsmith-in-place": "^1.4.3"
-  },
-  "dependencies": {
-    "metalsmith-html-minifier": "^2.0.0"
+    "metalsmith-filenames": "^1.0.0",
+    "metalsmith-html-minifier": "^2.0.0",
+    "metalsmith-layouts": "^1.6.4",
+    "metalsmith-less": "^2.0.0",
+    "metalsmith-uglify": "^1.2.1"
   }
 }
