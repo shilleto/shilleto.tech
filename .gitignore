@@ -6,6 +6,9 @@
 # User-specific stuff:
 .idea
 
+#generated files
+site
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
