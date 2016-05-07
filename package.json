@@ -22,6 +22,7 @@
     "metalsmith-concat": "^5.0.2",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-html-minifier": "^2.0.0",
+    "metalsmith-inline-source": "^1.0.3",
     "metalsmith-layouts": "^1.6.4",
     "metalsmith-less": "^2.0.0",
     "metalsmith-uglify": "^1.2.1",

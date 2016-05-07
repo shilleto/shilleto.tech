@@ -31,7 +31,6 @@ Metalsmith(__dirname)
         html: ['index.html'],
         output: 'app.css',
         basepath: 'stylesheets/css'
-        //removeOriginal: true
     }))
     .use(cleanCSS({
         files: 'stylesheets/css/app.css',
