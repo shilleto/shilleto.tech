@@ -4,19 +4,40 @@ var Metalsmith = require('metalsmith');
     htmlMinify = require('metalsmith-html-minifier');
     less = require('metalsmith-less');
     uglify = require('metalsmith-uglify');
+    concat = require('metalsmith-concat');
+    cleanCSS = require('metalsmith-clean-css');
+    uncss = require('metalsmith-uncss');
 
 
 Metalsmith(__dirname)
     .destination('./site')
-    .use(less({
-            pattern: "**/*.less",
-            render: {
-                paths: ['src/stylesheets/less'],
-                compress: true
-            }
-    }))
     .use(filenames())
     .use(layouts({engine: 'jade'}))
     .use(htmlMinify())
     .use(uglify({removeOriginal: true}))
+    .use(less({
+        pattern: "**/*.less",
+        render: {
+            paths: ['src/stylesheets/less'],
+            compress: true
+        }
+    }))
+    .use(concat({
+        files: '**/*.css',
+        output: 'stylesheets/css/app.css'
+    }))
+    .use(uncss({
+        css: ['app.css'],
+        html: ['index.html'],
+        output: 'app.css',
+        basepath: 'stylesheets/css'
+        //removeOriginal: true
+    }))
+    .use(cleanCSS({
+        files: 'stylesheets/css/app.css',
+        cleanCSS: {
+            rebase: false,
+            keepSpecialComments: 0
+        }
+    }))
     .build(function (err) { if(err) console.log(err) });

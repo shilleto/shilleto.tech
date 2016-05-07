@@ -5,7 +5,7 @@ footer.text-center
             .row
                 .footer-col.col-md-4
                     h3= footer.title1
-                    p= footer.text1
+                    p!= footer.text1
                 .footer-col.col-md-4
                     h3= footer.title2
                     ul.list-inline
@@ -20,8 +20,8 @@ footer.text-center
                                 i.fa.fa-fw.fa-github
                 .footer-col.col-md-4
                     h3= footer.title3
-                    p= footer.text3
+                    p!= footer.text3
     .footer-below
         .container
             .row
-                .col-lg-12=footer.copyright
+                .col-lg-12!= footer.copyright
