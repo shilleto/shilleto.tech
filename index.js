@@ -45,7 +45,6 @@ Metalsmith(__dirname)
             keepSpecialComments: 0
         }
     }))
-    //.use(inlineSource({rootpath: 'site'}))
     .build(function (err) {
         if(err) console.log(err)
         critical.generate({
@@ -54,7 +53,6 @@ Metalsmith(__dirname)
             src: 'index.html',
             dest: 'site/index.html',
             minify: true,
-            extract: true,
             width: 1300,
             height: 900
         });
