@@ -19,6 +19,7 @@
   "devDependencies": {
     "jade": "^1.11.0",
     "metalsmith": "^2.1.0",
+    "metalsmith-clean-css": "^4.0.0",
     "metalsmith-concat": "^5.0.2",
     "metalsmith-filenames": "^1.0.0",
     "metalsmith-html-minifier": "^2.0.0",
@@ -27,5 +28,8 @@
     "metalsmith-less": "^2.0.0",
     "metalsmith-uglify": "^1.2.1",
     "metalsmith-uncss": "^0.2.0"
+  },
+  "dependencies": {
+    "critical": "^0.7.2"
   }
 }

@@ -7,6 +7,10 @@ var Metalsmith = require('metalsmith');
     concat = require('metalsmith-concat');
     cleanCSS = require('metalsmith-clean-css');
     uncss = require('metalsmith-uncss');
+    inlineSource = require('metalsmith-inline-source');
+    critical = require('critical');
+    fs = require('fs');
+
 
 
 Metalsmith(__dirname)
@@ -14,7 +18,9 @@ Metalsmith(__dirname)
     .use(filenames())
     .use(layouts({engine: 'jade'}))
     .use(htmlMinify())
-    .use(uglify({removeOriginal: true}))
+    .use(uglify({
+        removeOriginal: true
+    }))
     .use(less({
         pattern: "**/*.less",
         render: {
@@ -39,4 +45,18 @@ Metalsmith(__dirname)
             keepSpecialComments: 0
         }
     }))
-    .build(function (err) { if(err) console.log(err) });
+    //.use(inlineSource({rootpath: 'site'}))
+    .build(function (err) {
+        if(err) console.log(err)
+        critical.generate({
+            inline: true,
+            base: 'site/',
+            src: 'index.html',
+            dest: 'site/index.html',
+            minify: true,
+            extract: true,
+            width: 1300,
+            height: 900
+        });
+
+    });
