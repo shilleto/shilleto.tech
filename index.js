@@ -7,9 +7,7 @@ var Metalsmith = require('metalsmith');
     concat = require('metalsmith-concat');
     cleanCSS = require('metalsmith-clean-css');
     uncss = require('metalsmith-uncss');
-    inlineSource = require('metalsmith-inline-source');
     critical = require('critical');
-    fs = require('fs');
 
 
 
