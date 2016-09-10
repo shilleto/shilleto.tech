@@ -1,11 +1,11 @@
-section(id=about.nav_name.replace(' ', '-').toLowerCase()).success
+section(id=about.nav_name.replace(' ', '-').toLowerCase())
     .container
         .row
             .col-lg-12.text-center
                 h2= about.title
-                hr.star-light
+                hr.star-primary
         .row
             .col-lg-4.col-lg-offset-2
                 p= about.text1
             .col-lg-4
-                p= about.text2
+                p!= about.text2
